@@ -1,3 +1,5 @@
+import Swal from 'sweetalert';
+
 const boton = document.getElementById('button-addon2');
 var opcion = 0; 
 var i = 0;
