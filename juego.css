@@ -12,6 +12,12 @@ body{
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+}
+.card{
+      width: 20em;
+      border: 1px;
+      padding: 8%;
 }
 #title{
     display: flex;
@@ -40,6 +46,7 @@ label{
       transition: 0.5s;
       border-radius: 15px;
 }
+
 input{
       font-family: 'Asap', sans-serif;
 }
@@ -49,7 +56,10 @@ input{
 .error h1, .error i{
       font-size: 1.3em ;
 }
-.exito{
+.exito{   
+      display: none;
+}
+.active{
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -60,10 +70,16 @@ input{
       color: white;
       width: 75%;
       margin-bottom: 5%;
-       margin-top: 5%;
-       gap: 5px;
+      margin-top: 5%;
+      gap: 5px;
 }
+
 .error{
+     
+      display: none;
+
+}
+.act{
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -75,11 +91,11 @@ input{
       width: 75%;
       margin-bottom: 5%;
       margin-top: 5%;
-
 }
 .moneda{
       width: 8em;
-      height: 8em;    
+      height: 8em;  
+      margin-left: 25%;  
       /*cambiar la animacion de la moneda escondida*/
       transform-style: preserve-3d;   
 }
