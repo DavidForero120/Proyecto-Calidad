@@ -14,9 +14,9 @@ body{
       align-items: center;
       justify-content: center;
 }
-.card{
-      width: 20em;
-      border: 1px;
+.card_{
+      width: 19em;
+      border: 2px solid black;
       padding: 8%;
 }
 #title{
