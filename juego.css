@@ -24,8 +24,8 @@ body{
       font-size: 2em !important;
 }
 #hr{
+      width: 100%;
       border-top: 2px solid !important;
-      margin: 0%;
       margin-top: 3%;
       margin-bottom: 3%;
 }
@@ -77,6 +77,48 @@ input{
       margin-top: 5%;
 
 }
+.moneda{
+      width: 8em;
+      height: 8em;    
+      /*cambiar la animacion de la moneda escondida*/
+      transform-style: preserve-3d;   
+}
+.moneda div{
+      width: 100%;
+      height: 100%;
+      /*ocultar la moneda que se salga del contenedor*/
+      backface-visibility: hidden;
+      position: absolute;
+}
+.cara{
+      border-radius: 50%;
+      background: url('img/cara-500.png');
+      background-size: contain;
+     
+}
+.sello{
+     background: url(img/sello-500.png);
+     background-size: contain;
+      border-radius: 50%;
+      /*animacion de rotacion que oculta el sello*/
+      transform: rotateY(-365deg);
+}
+/*crear animacionde monedas*/
+.animate-heads{
+      animation: flipHeads 15s;
+      
+}
+
+/*darle instrucciones a la anicacion creada*/
+@keyframes flipHeads{
+      from{
+            transform: rotateY(0deg);
+      }
+      to{
+            transform: rotateY(10000deg);
+      }
+}
+
 @media screen and (min-width: 480px) {
       #title h1{
             font-size: 2.5em !important;

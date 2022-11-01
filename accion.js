@@ -1,10 +1,9 @@
-import Swal from 'sweetalert2';
-
 const boton = document.getElementById('button-addon2');
 var opcion = 0; 
 var i = 0;
 
 boton.addEventListener('click', ()=>{
+    
       var valor = document.getElementById('inp__').value;
       var total= valor;
       if(valor > 1999){
@@ -29,11 +28,11 @@ boton.addEventListener('click', ()=>{
                         
                         confir = window.confirm("¿Desea Continuar?");     
                   }          
-            if(total >0){
+            if(total >=0){
                   window.alert(`Usted jugo ${i} vece(s) y le quedo ${total}$ pesos`);
                   window.alert(`GRACIAS POR JUGAR!!`);
             }else if(total < 0){
-                  window.alert(`Haz tenido mala suerte perdiste ${total}$ pesos y haz jugado ${i}`);
+                  window.alert(`Haz tenido mala suerte perdiste $ ${total} pesos y haz jugado ${i}`);
                   window.alert(`GRACIAS POR JUGAR!!`);
             }
       }else{
