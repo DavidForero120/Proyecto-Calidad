@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="juego.css">
+      <link rel="stylesheet" href="juego.css"><link rel="stylesheet" href="juego.css">
          
       <script src="https://kit.fontawesome.com/6131ecdde6.js" crossorigin="anonymous"></script>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -28,15 +28,18 @@
                               </div>
                         </div>
                   <hr id="hr">
-                        <div id="exito" class="exito">
-                              <h1>¡¡Usted ha ganado!!</h1>
-                              <i class="fa-solid fa-face-smile-wink"></i>                   
+                  <div class="juego" id="juego">
+                        <div class="ganar" >
+                              <h1 id="h1">Ganar</h1>
+                              <p id="ganar"></p>
                         </div>
-                        <div id="error" class="error">
-                              <h1>¡¡Usted ha perdido!!</h1>    
-                              <i class="fa-solid fa-face-sad-tear"></i>            
+                        <div class="perder" >
+                              <h1 id="h1">Perder</h1>
+                              <p id="perder"></p>
                         </div>
-                        
+                  </div>
+                  <hr id="hr">
+                                 
                         <div id="label">
                               <label for="btn">Ingrese el dinero a apostar:</label>
                         </div>
@@ -44,6 +47,9 @@
                               <input type="text"  id="inp__" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" >
                               <button class="btn btn-success" type="submit" id="button-addon1">Cara</button>
                               <button class="btn btn-info" type="submit" id="button-addon2">Sello</button>
+                        </div>
+                        <div id="reset" class="reset">
+                              <button id="reinicio" class="btn btn-secondary">Total</button>
                         </div>
             </div>      
       </div>  

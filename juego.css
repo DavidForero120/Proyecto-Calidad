@@ -19,6 +19,20 @@ body{
       border: 2px solid black;
       padding: 8%;
 }
+.juego{
+      display: flex;
+      width: 100%;
+      gap: 5%;
+}.ganar, .perder{
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      align-items: center;
+      margin-top: 5%;
+}
+#h1{
+      font-size: 1.3em;
+}
 #title{
     display: flex;
     justify-content: center;
@@ -50,47 +64,9 @@ label{
 input{
       font-family: 'Asap', sans-serif;
 }
-.exito h1, .exito i{
-      font-size: 1.3em ;
-}
-.error h1, .error i{
-      font-size: 1.3em ;
-}
-.exito{   
-      display: none;
-}
-.active{
+.reset{
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      background-color: rgb(121, 199, 5);
-      padding: 5%;
-      border-radius: 5px;
-      color: white;
-      width: 75%;
-      margin-bottom: 5%;
-      margin-top: 5%;
-      gap: 5px;
-}
-
-.error{
-     
-      display: none;
-
-}
-.act{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(207, 0, 0);
-      padding: 5%;
-      border-radius: 5px;
-      color: white;
-      width: 75%;
-      margin-bottom: 5%;
-      margin-top: 5%;
 }
 .moneda{
       width: 8em;
@@ -121,7 +97,7 @@ input{
 }
 /*crear animacionde monedas*/
 .animate-heads{
-      animation: flipHeads 15s;
+      animation: flipHeads 30s;
       
 }
 

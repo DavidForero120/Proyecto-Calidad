@@ -1,44 +1,87 @@
+const movi = document.getElementById('moneda');
+movi.addEventListener('click',()=>{
+      movi.classList.toggle('animate-heads')
+})
+      
+
+
 const cara = document.getElementById('button-addon1');
-var i = 0;
+
+const rGnar= document.getElementById('ganar');
+const rPerder = document.getElementById('perder');
+var i = 0 ;
 var e = 0;
-var juegos = i + e;
+var juegos = 0 ;
+var subtotal = 0;
 cara.addEventListener('click', ()=>{
       var valor = document.getElementById('inp__').value;
+      valor = parseFloat(valor)
       if(valor > 1999){
             var rando =  Math.random()*2 + 1;
             var moneda = rando.toPrecision(1);  
             if(moneda == 1){
-                  console.log("gano")
+                  console.log("gano");
                   e= e+1
-                  console.log(e)
-            }else{
-                  console.log("perdio")
-                  e= e+1
-                  console.log(e)
+                  rGnar.innerText= e
+                  subtotal = subtotal + valor
+                  console.log(subtotal)
+            }else if(moneda > 1){
+                  console.log("perdio");
+                  rPerder.innerHTML=i;  
+                  i = i+1   
+                  subtotal = subtotal - valor 
+                  console.log(subtotal)            
             }
+            juegos = i + e;
+      
       }else{
             Swal.fire({title:"Por favor ingrese un cantidad de dinero mayor o igual a 2000!!"});
       }
-      console.log(juegos)
+      
 })
 
 const sello = document.getElementById('button-addon2');
 sello.addEventListener('click', ()=>{
       var valor = document.getElementById('inp__').value;
+      valor = parseFloat(valor)
       if(valor > 1999){
             var rando =  Math.random()*2 + 1;
             var moneda = rando.toPrecision(1); 
             if(moneda==2){
-                  console.log("gano")
+                  console.log("gano");
+                  e= e+1
+                  rGnar.innerText= e
+                  subtotal = subtotal + valor
+                  console.log(subtotal)
+                  
+            }else if(moneda <2 || moneda >2){
+                  console.log("perdio");
                   i =i+1
-                  console.log(i)
-            }else{
-                  console.log("perdio")
-                  i =i+1
-                  console.log(i)
+                  rPerder.innerHTML=i;
+                  subtotal = subtotal - valor 
+                  console.log(subtotal)
             } 
+      
+            juegos = i + e;
       }else{
             Swal.fire({title:"Por favor ingrese un cantidad de dinero mayor o igual a 2000!!"});
       }
-      console.log(juegos)
+      
+     
 })
+
+const volver = document.getElementById('reinicio');
+volver.addEventListener('click', ()=>{
+      if(subtotal <0){
+            alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos}`);
+            Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
+           
+      }else{
+            alert(`El total acumulado es $ ${subtotal} y jugo ${juegos}`);
+            Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
+            
+      }
+      window.location.reload(true);
+})
+
+
