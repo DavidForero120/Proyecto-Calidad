@@ -94,7 +94,7 @@ input{
      
 }
 .sello{
-     background: url(img/sello-500.png);
+     background: url('img/sello-500.png');
      background-size: contain;
       border-radius: 50%;
       /*animacion de rotacion que oculta el sello*/
