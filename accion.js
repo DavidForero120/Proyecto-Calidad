@@ -19,6 +19,7 @@ cara.addEventListener('click', ()=>{
       if(valor > 1999){
             var rando =  Math.random()*2 + 1;
             var moneda = rando.toPrecision(1);  
+            console.log(moneda)
             if(moneda == 1){
                   console.log("gano");
                   e= e+1
@@ -72,13 +73,18 @@ sello.addEventListener('click', ()=>{
 
 const volver = document.getElementById('reinicio');
 volver.addEventListener('click', ()=>{
-      if(subtotal <0){
-            alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces`);
-            Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
-           
-      }else{
+      if(subtotal >=0){
             alert(`El total acumulado es $ ${subtotal} y jugo ${juegos} veces`);
+            Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});       
+      }else{
+            if(subtotal <= -800000){
+                  subtotal = subtotal + 100000
+                  alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces y tuviste un descuento de 100000 pesos`);
             Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
+            }else{
+                  alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces`);
+                  Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
+            }
             
       }
       window.location.reload(true);
