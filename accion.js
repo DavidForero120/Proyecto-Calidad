@@ -1,27 +1,93 @@
-const boton = document.getElementById('button-addon2');
-
-const confirm = true;
-var opcion = 0; 
-var i = 1;
-
-
-boton.addEventListener('click', ()=>{
-      var valor = document.getElementById('inp__').value;
-     
-      while(confirm == true){
-            var rando =  Math.random()*2 + 1;
-            var moneda = rando.toPrecision(1);
-            parseInt(opcion);  
-            opcion = prompt("Eliga: \n 1.cara \n 2.sello");  
-            if(moneda == opcion){         
-                  console.log("usted gano");
-            }else{
-                  console.log("usted perdio");
-            }
-            console.log(`${moneda}  ${i}`);
-            i++
-            confirm == true; 
-
-      }
-
+const movi = document.getElementById('moneda');
+movi.addEventListener('click',()=>{
+      movi.classList.toggle('animate-heads')
 })
+      
+
+
+const cara = document.getElementById('button-addon1');
+
+const rGnar= document.getElementById('ganar');
+const rPerder = document.getElementById('perder');
+var i = 0 ;
+var e = 0;
+var juegos = 0 ;
+var subtotal = 0;
+cara.addEventListener('click', ()=>{
+      var valor = document.getElementById('inp__').value;
+      valor = parseFloat(valor)
+      if(valor > 1999){
+            var rando =  Math.random()*2 + 1;
+            var moneda = rando.toPrecision(1);  
+            console.log(moneda)
+            if(moneda == 1){
+                  console.log("gano");
+                  e= e+1
+                  rGnar.innerText= e
+                  subtotal = subtotal + valor
+                  console.log(subtotal)
+            }else if(moneda <2 || moneda >2){
+                  console.log("perdio");
+                  i =i+1
+                  rPerder.innerHTML=i;
+                  subtotal = subtotal - valor 
+                  console.log(subtotal)
+            } 
+            juegos = i + e;
+      
+      }else{
+            Swal.fire({title:"Por favor ingrese un cantidad de dinero mayor o igual a 2000!!"});
+      }
+      
+})
+
+const sello = document.getElementById('button-addon2');
+sello.addEventListener('click', ()=>{
+      var valor = document.getElementById('inp__').value;
+      valor = parseFloat(valor)
+      if(valor > 1999){
+            var rando =  Math.random()*2 + 1;
+            var moneda = rando.toPrecision(1); 
+            if(moneda==2){
+                  console.log("gano");
+                  e= e+1
+                  rGnar.innerText= e
+                  subtotal = subtotal + valor
+                  console.log(subtotal)
+                  
+            }else if(moneda <2 || moneda >2){
+                  console.log("perdio");
+                  i =i+1
+                  rPerder.innerHTML=i;
+                  subtotal = subtotal - valor 
+                  console.log(subtotal)
+            } 
+      
+            juegos = i + e;
+      }else{
+            Swal.fire({title:"Por favor ingrese un cantidad de dinero mayor o igual a 2000!!"});
+      }
+      
+     
+})
+
+const volver = document.getElementById('reinicio');
+volver.addEventListener('click', ()=>{
+      if(subtotal >=0){
+            alert(`El total acumulado es $ ${subtotal} y jugo ${juegos} veces`);
+            Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});       
+      }else{
+            if(subtotal <= -800000){
+                  subtotal = subtotal + 100000
+                  alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces y tuviste un descuento de 100000 pesos`);
+            Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
+            }else{
+                  alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces`);
+                  Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
+            }
+            
+      }
+      window.location.reload(true);
+})
+
+
