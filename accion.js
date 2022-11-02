@@ -73,11 +73,11 @@ sello.addEventListener('click', ()=>{
 const volver = document.getElementById('reinicio');
 volver.addEventListener('click', ()=>{
       if(subtotal <0){
-            alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos}`);
+            alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces`);
             Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
            
       }else{
-            alert(`El total acumulado es $ ${subtotal} y jugo ${juegos}`);
+            alert(`El total acumulado es $ ${subtotal} y jugo ${juegos} veces`);
             Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
             
       }
