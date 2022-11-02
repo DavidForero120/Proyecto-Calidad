@@ -26,13 +26,13 @@ cara.addEventListener('click', ()=>{
                   rGnar.innerText= e
                   subtotal = subtotal + valor
                   console.log(subtotal)
-            }else if(moneda > 1){
+            }else if(moneda <2 || moneda >2){
                   console.log("perdio");
-                  rPerder.innerHTML=i;  
-                  i = i+1   
+                  i =i+1
+                  rPerder.innerHTML=i;
                   subtotal = subtotal - valor 
-                  console.log(subtotal)            
-            }
+                  console.log(subtotal)
+            } 
             juegos = i + e;
       
       }else{

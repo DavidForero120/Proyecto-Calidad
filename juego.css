@@ -98,7 +98,7 @@ input{
      background-size: contain;
       border-radius: 50%;
       /*animacion de rotacion que oculta el sello*/
-      transform: rotateY(-365deg);
+      transform: rotateX(-365deg);
 }
 /*crear animacionde monedas*/
 .animate-heads{
@@ -109,10 +109,10 @@ input{
 /*darle instrucciones a la anicacion creada*/
 @keyframes flipHeads{
       from{
-            transform: rotateY(0deg);
+            transform: rotateX(0deg);
       }
       to{
-            transform: rotateY(100000deg);
+            transform: rotateX(300000deg);
       }
 }
 
