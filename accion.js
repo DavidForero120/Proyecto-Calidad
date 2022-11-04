@@ -27,7 +27,7 @@ cara.addEventListener('click', ()=>{
                   i =i+1
                   rPerder.innerHTML=i;
                   subtotal = subtotal - valor 
-                  alert(`Has perdido ya que salio cara`)
+                  alert(`Has perdido ya que salio sello`)
             } 
             juegos = i + e;
       
@@ -55,7 +55,7 @@ sello.addEventListener('click', ()=>{
                   i =i+1
                   rPerder.innerHTML=i;
                   subtotal = subtotal - valor 
-                  alert(`Has perdido ya que salio sello`)
+                  alert(`Has perdido ya que salio cara`)
             } 
       
             juegos = i + e;
