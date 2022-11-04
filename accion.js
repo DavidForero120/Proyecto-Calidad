@@ -1,8 +1,5 @@
 const movi = document.getElementById('moneda');
-movi.addEventListener('click',()=>{
-      movi.classList.toggle('animate-heads')
-})
-      
+
 
 
 const cara = document.getElementById('button-addon1');
@@ -19,19 +16,18 @@ cara.addEventListener('click', ()=>{
       if(valor > 1999){
             var rando =  Math.random()*2 + 1;
             var moneda = rando.toPrecision(1);  
-            console.log(moneda)
             if(moneda == 1){
-                  console.log("gano");
+                  movi.classList.replace('animate-heads','animate-coin');
                   e= e+1
                   rGnar.innerText= e
-                  subtotal = subtotal + valor
-                  console.log(subtotal)
+                  subtotal = subtotal + (valor*2)
+                  alert(`Has ganado ya que salio cara`)
             }else if(moneda <2 || moneda >2){
-                  console.log("perdio");
+                  movi.classList.replace('animate-heads','animate-coin');
                   i =i+1
                   rPerder.innerHTML=i;
                   subtotal = subtotal - valor 
-                  console.log(subtotal)
+                  alert(`Has perdido ya que salio cara`)
             } 
             juegos = i + e;
       
@@ -49,18 +45,17 @@ sello.addEventListener('click', ()=>{
             var rando =  Math.random()*2 + 1;
             var moneda = rando.toPrecision(1); 
             if(moneda==2){
-                  console.log("gano");
+                  movi.classList.replace('animate-heads','animate-coin');
                   e= e+1
                   rGnar.innerText= e
-                  subtotal = subtotal + valor
-                  console.log(subtotal)
-                  
+                  subtotal = subtotal + (valor*2)    
+                  alert(`Has ganado ya que salio sello`)          
             }else if(moneda <2 || moneda >2){
-                  console.log("perdio");
+                  movi.classList.replace('animate-heads','animate-coin');
                   i =i+1
                   rPerder.innerHTML=i;
                   subtotal = subtotal - valor 
-                  console.log(subtotal)
+                  alert(`Has perdido ya que salio sello`)
             } 
       
             juegos = i + e;
@@ -79,10 +74,10 @@ volver.addEventListener('click', ()=>{
       }else{
             if(subtotal <= -800000){
                   subtotal = subtotal + 100000
-                  alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces y tuviste un descuento de 100000 pesos`);
+                  alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces y tuvo un descuento de 100000 pesos`);
             Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
             }else{
-                  alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces`);
+                  alert(`has tenido mala suerte perdio $ ${subtotal} y jugo ${juegos} veces`);
                   Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
             }
             

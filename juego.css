@@ -4,6 +4,7 @@
 body{
       margin: 0%;
 }
+
 #container__{
       width: 100vw;
       height: 100vh;
@@ -102,17 +103,21 @@ input{
 }
 /*crear animacionde monedas*/
 .animate-heads{
-      animation: flipHeads 480s;
+      animation: flipHeads 0s;
+      
+}
+.animate-coin{
+      animation: flipCoin 400s;
       
 }
 
 /*darle instrucciones a la anicacion creada*/
-@keyframes flipHeads{
+@keyframes flipCoin{
       from{
             transform: rotateX(0deg);
       }
       to{
-            transform: rotateX(300000deg);
+            transform: rotateX(100000deg);
       }
 }
 
@@ -134,7 +139,7 @@ input{
             margin-bottom: 5%;
       }#reinicio{
             font-size: 1.1em;
-            width: 5em;
+            width: 8em;
       }#h1{
             font-size: 1.3em;
       }.mb-3 {
