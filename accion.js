@@ -20,7 +20,7 @@ cara.addEventListener('click', ()=>{
                   movi.classList.replace('animate-heads','animate-coin');
                   e= e+1
                   rGnar.innerText= e
-                  subtotal = subtotal + (valor*2)
+                  subtotal = subtotal + valor
                   alert(`Has ganado ya que salio cara`)
             }else if(moneda <2 || moneda >2){
                   movi.classList.replace('animate-heads','animate-coin');
@@ -48,7 +48,7 @@ sello.addEventListener('click', ()=>{
                   movi.classList.replace('animate-heads','animate-coin');
                   e= e+1
                   rGnar.innerText= e
-                  subtotal = subtotal + (valor*2)    
+                  subtotal = subtotal + valor  
                   alert(`Has ganado ya que salio sello`)          
             }else if(moneda <2 || moneda >2){
                   movi.classList.replace('animate-heads','animate-coin');
